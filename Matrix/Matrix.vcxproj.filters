@@ -36,6 +36,15 @@
     <ClInclude Include="Iterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MatrixBasedOnOneDimensionalArray.h">
+      <Filter>Header Files\1D2DUD</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixBasedOnTwoDimensionalArray.h">
+      <Filter>Header Files\1D2DUD</Filter>
+    </ClInclude>
+    <ClInclude Include="MatrixBasedOnUnknownDimensionalArray.h">
+      <Filter>Header Files\1D2DUD</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp">
@@ -73,6 +82,15 @@
     </ClCompile>
     <ClCompile Include="1DMatrixNExceptions.cpp">
       <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixBasedOnUnknownDimensionalArray.cpp">
+      <Filter>Source Files\1D2DUD</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixBasedOnOneDimensionalArray.cpp">
+      <Filter>Source Files\1D2DUD</Filter>
+    </ClCompile>
+    <ClCompile Include="MatrixBasedOnTwoDimensionalArray.cpp">
+      <Filter>Source Files\1D2DUD</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

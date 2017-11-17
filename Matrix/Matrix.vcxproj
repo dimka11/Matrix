@@ -112,6 +112,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Iterator.h" />
+    <ClInclude Include="MatrixBasedOnOneDimensionalArray.h" />
+    <ClInclude Include="MatrixBasedOnTwoDimensionalArray.h" />
+    <ClInclude Include="MatrixBasedOnUnknownDimensionalArray.h" />
     <ClInclude Include="OneDArray.h" />
     <ClInclude Include="TwoDArray.h" />
     <ClInclude Include="Matrix.h" />
@@ -121,6 +124,9 @@
     <ClCompile Include="2DMatrixcpp.cpp" />
     <ClCompile Include="DI_Example.cpp" />
     <ClCompile Include="Examples.cpp" />
+    <ClCompile Include="MatrixBasedOnOneDimensionalArray.cpp" />
+    <ClCompile Include="MatrixBasedOnTwoDimensionalArray.cpp" />
+    <ClCompile Include="MatrixBasedOnUnknownDimensionalArray.cpp" />
     <ClCompile Include="OneDArray.cpp" />
     <ClCompile Include="TwoDArray.cpp" />
     <ClCompile Include="iterator (2).cpp" />
