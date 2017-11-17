@@ -9,10 +9,33 @@ namespace MatrixUnitTest
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(InvalidSize1D)
 		{
 			// TODO: Your test code here
 		}
-
+		TEST_METHOD(InvalidSize2D)
+		{
+			// TODO: Your test code here
+		}
+		TEST_METHOD(SetGet1D)
+		{
+			// TODO: Your test code here
+		}
+		TEST_METHOD(SetGet2D)
+		{
+			// TODO: Your test code here
+		}
+		TEST_METHOD(InvalidCoord1D)
+		{
+			// TODO: Your test code here
+		}
+		TEST_METHOD(InvalidCoord2D)
+		{
+			// TODO: Your test code here
+		}
+		TEST_METHOD(AreEqual)
+		{
+			// TODO: Your test code here
+		}
 	};
 }

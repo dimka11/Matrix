@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -111,15 +111,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="1DArray.h" />
-    <ClInclude Include="2DArray.h" />
+    <ClInclude Include="Iterator.h" />
+    <ClInclude Include="OneDArray.h" />
+    <ClInclude Include="TwoDArray.h" />
     <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1DArray.cpp" />
-    <ClCompile Include="2DArray.cpp" />
+    <ClCompile Include="OneDArray.cpp" />
+    <ClCompile Include="TwoDArray.cpp" />
+    <ClCompile Include="iterator (2).cpp" />
+    <ClCompile Include="Iterator(1).cpp" />
     <ClCompile Include="Iterator.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="StringComp.cpp" />
+    <ClCompile Include="Итератор.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
