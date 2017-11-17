@@ -19,5 +19,7 @@ void  set_ij(Matrix& m, size_t i, size_t j, double val); // setter
 void deleteMatrix(Matrix& m) throw(); // Удаление матрицы
 size_t size(Matrix& m) throw(); // Размер матрицы
 
+bool CheckThatIndexIsInRange(Matrix &m, size_t j); 
+
 #endif
-/////
+/////s

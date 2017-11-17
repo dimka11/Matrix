@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\OtherFiles">
+      <UniqueIdentifier>{2cf7c126-c8f9-4ebc-b9af-688480610ccd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix.h">
@@ -32,16 +35,7 @@
     <ClCompile Include="Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Итератор.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="StringComp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Iterator(1).cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="iterator (2).cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Iterator.cpp">
@@ -52,6 +46,27 @@
     </ClCompile>
     <ClCompile Include="TwoDArray.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DI_Example.cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Examples.cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="iterator (2).cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterator(1).cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Итератор.cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="2DMatrixcpp.cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="1DMatrixNExceptions.cpp">
+      <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

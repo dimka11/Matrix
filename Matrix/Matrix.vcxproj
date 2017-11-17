@@ -117,6 +117,10 @@
     <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="1DMatrixNExceptions.cpp" />
+    <ClCompile Include="2DMatrixcpp.cpp" />
+    <ClCompile Include="DI_Example.cpp" />
+    <ClCompile Include="Examples.cpp" />
     <ClCompile Include="OneDArray.cpp" />
     <ClCompile Include="TwoDArray.cpp" />
     <ClCompile Include="iterator (2).cpp" />
