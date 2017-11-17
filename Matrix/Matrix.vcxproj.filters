@@ -16,6 +16,12 @@
     <Filter Include="Source Files\OtherFiles">
       <UniqueIdentifier>{2cf7c126-c8f9-4ebc-b9af-688480610ccd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\1D2DUD">
+      <UniqueIdentifier>{054f0df9-8eee-45d2-a73c-1f59c97b203e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\1D2DUD">
+      <UniqueIdentifier>{c8805c5a-d7fe-4fb6-b5c7-34cbd5e8ccb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Matrix.h">

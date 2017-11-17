@@ -58,6 +58,11 @@ size_t sizeOneDMatrix(void* Matrix) throw()
 	return _Matrix->size;
 }
 
+/// <summary>
+/// Deletes the one d matrix.
+/// </summary>
+/// <param name="Matrix">”казатель на матрицу.</param>
+/// <returns></returns>
 void deleteOneDMatrix(void *Matrix) throw()
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
