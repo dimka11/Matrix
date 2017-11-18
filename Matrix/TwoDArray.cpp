@@ -53,7 +53,6 @@ void deleteTwoDMatrix(void *M) throw()
 		delete M;
 	}
 }
-
 void set_ijTwoDMatrix(void *M, size_t i, size_t j, int value) throw(std::invalid_argument)
 {
 	TwoDMatrix *_M = static_cast<TwoDMatrix*>(M);
