@@ -56,25 +56,13 @@
     <ClCompile Include="Iterator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OneDArray.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TwoDArray.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DI_Example.cpp">
-      <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
     <ClCompile Include="Examples.cpp">
       <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
     <ClCompile Include="Iterator(1).cpp">
-      <Filter>Source Files\OtherFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="2DMatrixcpp.cpp">
-      <Filter>Source Files\OtherFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="1DMatrixNExceptions.cpp">
       <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
     <ClCompile Include="MatrixBasedOnUnknownDimensionalArray.cpp">

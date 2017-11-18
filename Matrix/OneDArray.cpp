@@ -58,14 +58,17 @@ size_t sizeOneDMatrix(void* Matrix) throw()
 	return _Matrix->size;
 }
 
-/// <summary>
-/// Deletes the one d matrix.
-/// </summary>
-/// <param name="Matrix">”казатель на матрицу.</param>
-/// <returns></returns>
+
 void deleteOneDMatrix(void *Matrix) throw()
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
 	delete[] _Matrix->body;
+}
+bool CheckThatSecondArgNotGreatherFirst(OneDMatrix &m, size_t j)
+{
+	return m.body[m.size + j];
+}
+bool CheckThatIndexIsInRange(OneDMatrix &m, size_t j)
+{
 }
 

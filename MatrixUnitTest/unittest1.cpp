@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "../Matrix/OneDArray.h"
+#include "../Matrix/TwoDArray.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -17,7 +18,7 @@ namespace MatrixUnitTest
 		}
 		TEST_METHOD(TwoDMatrixCreatedAndDeleted)
 		{
-			TwoDMatrix *m = createTwoDMatrix(3);
+			TwoDMatrix *m = CreateTwoDMatrix(3);
 			deleteOneDMatrix(m);
 		}
 		
