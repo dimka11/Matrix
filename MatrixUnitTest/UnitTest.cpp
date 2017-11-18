@@ -26,7 +26,7 @@ namespace MatrixUnitTest
 		{
 			// TODO: Your test code here
 		}
-		TEST_METHOD(InvalidSizeTwoDMatrix)
+		TEST_METHOD(InvalidSizeOneDMatrix)
 		{
 			// TODO: Your test code here
 		}

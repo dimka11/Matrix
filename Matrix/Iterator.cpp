@@ -11,7 +11,7 @@ struct It{
 It *CreateIterator(Matrix const& m){
 	It *it = new It;
 	it->data = &m;
-	it->size = size(m);
+	it->size = size(&m);
 	return it;
 }
 /*
