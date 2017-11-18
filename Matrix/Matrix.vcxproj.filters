@@ -68,13 +68,7 @@
     <ClCompile Include="Examples.cpp">
       <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
-    <ClCompile Include="iterator (2).cpp">
-      <Filter>Source Files\OtherFiles</Filter>
-    </ClCompile>
     <ClCompile Include="Iterator(1).cpp">
-      <Filter>Source Files\OtherFiles</Filter>
-    </ClCompile>
-    <ClCompile Include="Итератор.cpp">
       <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
     <ClCompile Include="2DMatrixcpp.cpp">

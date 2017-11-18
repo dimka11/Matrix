@@ -17,7 +17,7 @@ namespace MatrixUnitTest
 		}
 		TEST_METHOD(TwoDMatrixCreatedAndDeleted)
 		{
-			TwoDMatrix *m = createTwoDMatrix(5);
+			TwoDMatrix *m = createTwoDMatrix(3);
 			deleteOneDMatrix(m);
 		}
 		
