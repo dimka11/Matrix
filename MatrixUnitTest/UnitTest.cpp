@@ -14,35 +14,35 @@ namespace MatrixUnitTest
 		TEST_METHOD(OneDMatrixCreatedAndDeleted)
 		{	
 			OneDMatrix *m = createOneDMatrix(5);
-			deleteOneDMatrix(m);
+			 deleteOneDMatrix(m);
 		}
 		TEST_METHOD(TwoDMatrixCreatedAndDeleted)
 		{
 			TwoDMatrix *m = CreateTwoDMatrix(3);
-			deleteOneDMatrix(m);
+			 deleteTwoDMatrix(m);
 		}
 		
-		TEST_METHOD(InvalidSize1D)
+		TEST_METHOD(InvalidSizeTwoDMatrix)
 		{
 			// TODO: Your test code here
 		}
-		TEST_METHOD(InvalidSize2D)
+		TEST_METHOD(InvalidSizeTwoDMatrix)
 		{
 			// TODO: Your test code here
 		}
-		TEST_METHOD(SetGet1D)
+		TEST_METHOD(SetGetOneDMatrix)
 		{
 			// TODO: Your test code here
 		}
-		TEST_METHOD(SetGet2D)
+		TEST_METHOD(SetGetTwoDMatrix)
 		{
 			// TODO: Your test code here
 		}
-		TEST_METHOD(InvalidCoord1D)
+		TEST_METHOD(InvalidCoordOneDMatrix)
 		{
 			// TODO: Your test code here
 		}
-		TEST_METHOD(InvalidCoord2D)
+		TEST_METHOD(InvalidCoordTwoDMatrix)
 		{
 			// TODO: Your test code here
 		}

@@ -124,6 +124,7 @@
     <ClCompile Include="MatrixBasedOnOneDimensionalArray.cpp" />
     <ClCompile Include="MatrixBasedOnTwoDimensionalArray.cpp" />
     <ClCompile Include="MatrixBasedOnUnknownDimensionalArray.cpp" />
+    <ClCompile Include="OneDArray.cpp" />
     <ClCompile Include="TwoDArray.cpp" />
     <ClCompile Include="Iterator(1).cpp" />
     <ClCompile Include="Iterator.cpp" />
