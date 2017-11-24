@@ -38,9 +38,6 @@
     <ClCompile Include="StringComp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Iterator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TwoDArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -51,6 +48,12 @@
       <Filter>Source Files\OtherFiles</Filter>
     </ClCompile>
     <ClCompile Include="OneDArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="z_exampleIterator.cpp">
+      <Filter>Source Files\OtherFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Iterator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
