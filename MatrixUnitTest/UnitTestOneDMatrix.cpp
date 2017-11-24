@@ -43,5 +43,11 @@ namespace MatrixUnitTest
 			Assert::AreEqual<std::string>(get_ijOneDMatrix(Matrix, 1, 1), "Hello");
 			deleteOneDMatrix(Matrix);
 		}
+		TEST_METHOD(GetSizeFunctionWorkingCorrectly)
+		{
+			OneDMatrix* Matrix = CreateOneDMatrix(8);
+			Assert::AreEqual<int>(sizeOneDMatrix(Matrix), 8);
+			deleteOneDMatrix(Matrix);
+		}
 	};
 }
