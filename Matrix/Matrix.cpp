@@ -32,6 +32,7 @@ Matrix *CreateGeneralTwoDMatrix(size_t s)
 	GeneralMatrix->_set_ij = set_ijOneDMatrix;
 	GeneralMatrix->_delete = deleteOneDMatrix;
 	GeneralMatrix->_size = sizeTwoDMatrix;
+
 	return GeneralMatrix;
 }
 string get_ij(Matrix &M, size_t i, size_t j)
@@ -47,7 +48,7 @@ void deleteMatrix(Matrix *M)
 	return M->_delete(M->body);
 	//return M._delete(M.body);
 }
-size_t size(Matrix const &M)
+size_t sizeMatrix(Matrix const&M)
 {
 	return M._size(M.body);
 }

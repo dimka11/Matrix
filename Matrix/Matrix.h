@@ -20,7 +20,7 @@ Matrix *CreateGeneralTwoDMatrix(size_t s);
 std::string get_ij(Matrix const &M, size_t i, size_t j); // getter
 void set_ij(Matrix &M, size_t i, size_t j, std::string value); // setter
 void deleteMatrix(Matrix *M) throw(); // delete
-size_t size(Matrix const &M) throw(); // size of matrix
+size_t sizeMatrix(Matrix const&M) throw(); // size of matrix
 
 
 #endif
