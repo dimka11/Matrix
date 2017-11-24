@@ -112,18 +112,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Iterator.h" />
-    <ClInclude Include="MatrixBasedOnOneDimensionalArray.h" />
-    <ClInclude Include="MatrixBasedOnTwoDimensionalArray.h" />
-    <ClInclude Include="MatrixBasedOnUnknownDimensionalArray.h" />
     <ClInclude Include="OneDArray.h" />
     <ClInclude Include="TwoDArray.h" />
     <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Examples.cpp" />
-    <ClCompile Include="MatrixBasedOnOneDimensionalArray.cpp" />
-    <ClCompile Include="MatrixBasedOnTwoDimensionalArray.cpp" />
-    <ClCompile Include="MatrixBasedOnUnknownDimensionalArray.cpp" />
     <ClCompile Include="OneDArray.cpp" />
     <ClCompile Include="TwoDArray.cpp" />
     <ClCompile Include="Iterator(1).cpp" />

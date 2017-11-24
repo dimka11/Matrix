@@ -34,19 +34,19 @@ string get_ijOneDMatrix(void* Matrix, size_t i, size_t j)throw(std::invalid_argu
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
 	if (i < _Matrix->size || j > _Matrix->size) // check arg tha it not out of bound 
 	{
-		throw std::invalid_argument("i or j is grether than matrix size");
+		throw std::invalid_argument("i or j are grether than matrix size");
 	}
 	return _Matrix->body[i*_Matrix->size + 1];
 }
 
 void set_ijOneDMatrix(void* Matrix, size_t i, size_t j, string value)throw(std::invalid_argument)
 {
-	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
+	OneDMatrix*_Matrix = static_cast<OneDMatrix*>(Matrix);
 	if(i > _Matrix->size || j > _Matrix->size)
 	{
-		throw std::invalid_argument("i or j is grether than matrix size");
+		throw std::invalid_argument("i or j are greather than matrix size");
 	}
-	_Matrix->body[i*_Matrix->size + 1] = value;
+	_Matrix->body[i*_Matrix->size + j] = value;
 }
 
 size_t sizeOneDMatrix(void* Matrix) throw()
