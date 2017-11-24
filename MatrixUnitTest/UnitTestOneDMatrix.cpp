@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "../Matrix/OneDArray.h"
-#include "../Matrix/TwoDArray.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace MatrixUnitTest
 {		
-	TEST_CLASS(UnitTest1)
+	TEST_CLASS(UnitTestOneDMatrix)
 	{
 	public:
 
