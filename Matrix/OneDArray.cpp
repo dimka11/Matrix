@@ -1,54 +1,51 @@
 #include "OneDArray.h"
+#include <stdexcept>
+#include <string>
+using namespace std;
 
 struct OneDMatrix
 {
-	double* body; // тело
+	string* body; // тело
 	size_t size; // размер
 };
 
-OneDMatrix* createOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_argument)
+OneDMatrix* CreateOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_argument)
 {
 	if (0 == size) // check size
 	{
-		throw std::invalid_argument("Argument size should be great than 0.");
+		throw std::invalid_argument("Matrix size should be greather than 0.");
 	}
-	OneDMatrix *res = new OneDMatrix; // выделение памяти под матрицу
+	OneDMatrix *res = new OneDMatrix; // alloc memory
 	try
 	{
-		res->body = new double[size]; //todo replace double to string
+		res->body = new string[size]; 
 		res->size = size;
+		return res;
 	}
-	catch(std::bad_alloc const& ex) // не хватило памяти ((
+	catch(std::bad_alloc const& ex) // not enough memory
 	{
 		delete res;
-		throw ex; // проброс исключения
+		throw ex; // throw an exception
 	}
 }
 
-
-/// <summary>
-/// Gets the ij one d matrix.
-/// </summary>
-/// <param name="Matrix">The matrix.</param>
-/// <param name="i">The i.</param>
-/// <param name="j">The j.</param>
-/// <returns> Значение ячейки матрицы</returns>
-double get_ijOneDMatrix(void* Matrix, size_t i, size_t j)
+string get_ijOneDMatrix(void* Matrix, size_t i, size_t j)throw(std::invalid_argument)
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
-	return _Matrix->body[i*_Matrix->size + 1]; // Multiply operator?
+	if (i < _Matrix->size || j > _Matrix->size) // check arg tha it not out of bound 
+	{
+		throw std::invalid_argument("i or j is grether than matrix size");
+	}
+	return _Matrix->body[i*_Matrix->size + 1];
 }
-/// <summary>
-/// Setter for One Dimension Matrix implementation.
-/// </summary>
-/// <param name="Matrix">Матрица</param>
-/// <param name="i">The i.</param>
-/// <param name="j">The j.</param>
-/// <param name="value">The value.</param>
-void set_ijOneDMatrix(void* Matrix, size_t i, size_t j, double value)
+
+void set_ijOneDMatrix(void* Matrix, size_t i, size_t j, string value)throw(std::invalid_argument)
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
-	//todo Исправить сеттер
+	if(i > _Matrix->size || j > _Matrix->size)
+	{
+		throw std::invalid_argument("i or j is grether than matrix size");
+	}
 	_Matrix->body[i*_Matrix->size + 1] = value;
 }
 
@@ -58,17 +55,9 @@ size_t sizeOneDMatrix(void* Matrix) throw()
 	return _Matrix->size;
 }
 
-
 void deleteOneDMatrix(void *Matrix) throw()
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
 	delete[] _Matrix->body;
+	delete Matrix;
 }
-bool CheckThatSecondArgNotGreatherFirst(OneDMatrix &m, size_t j)
-{
-	return m.body[m.size + j];
-}
-bool CheckThatIndexIsInRange(OneDMatrix &m, size_t j)
-{
-}
-

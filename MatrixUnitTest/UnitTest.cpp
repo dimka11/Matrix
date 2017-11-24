@@ -11,11 +11,12 @@ namespace MatrixUnitTest
 	{
 	public:
 
-		TEST_METHOD(OneDMatrixCreatedAndDeleted)
+		TEST_METHOD(OneDMatrixCreated)
 		{	
-			OneDMatrix *m = createOneDMatrix(5);
-			 deleteOneDMatrix(m);
+			OneDMatrix *m = CreateOneDMatrix(5);
+			deleteOneDMatrix(m);
 		}
+	
 		TEST_METHOD(TwoDMatrixCreatedAndDeleted)
 		{
 			TwoDMatrix *m = CreateTwoDMatrix(3);

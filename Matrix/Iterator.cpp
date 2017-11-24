@@ -1,5 +1,5 @@
 #include "Matrix.h"
-
+/*
 struct It{
 	Matrix const* data;
 	size_t current_i;
@@ -19,6 +19,7 @@ while (next(i)){
 	current(i)
 }
 */
+/*
 void deleteIterator(It &it)
 {
 	delete[] it.data;;
@@ -46,3 +47,5 @@ void next(It &it){
 int current(It &it){
 	return get_ij(*it.data, it.current_i, it_current_j);
 }
+
+*/

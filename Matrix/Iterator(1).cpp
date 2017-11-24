@@ -1,5 +1,5 @@
 #include "Matrix.h"
-
+/*
 struct matrix_iterator
 {
 	double* data;
@@ -48,3 +48,4 @@ Assert::AreEqual(etalon[i++], current(iter), 1e-5)
 }
 
 */
+
