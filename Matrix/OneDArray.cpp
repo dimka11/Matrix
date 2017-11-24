@@ -5,8 +5,8 @@ using namespace std;
 
 struct OneDMatrix
 {
-	string* body; // тело
-	size_t size; // размер
+	string* body; // pointer
+	size_t size; //size
 };
 
 OneDMatrix* CreateOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_argument)
@@ -32,11 +32,11 @@ OneDMatrix* CreateOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_arg
 string get_ijOneDMatrix(void* Matrix, size_t i, size_t j)throw(std::invalid_argument)
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
-	if (i < _Matrix->size || j > _Matrix->size) // check arg tha it not out of bound 
+	if (i < _Matrix->size || j > _Matrix->size) // check that arg it not out of bound 
 	{
 		throw std::invalid_argument("i or j are grether than matrix size");
 	}
-	return _Matrix->body[i*_Matrix->size + 1];
+	return _Matrix->body[i*_Matrix->size + j];
 }
 
 void set_ijOneDMatrix(void* Matrix, size_t i, size_t j, string value)throw(std::invalid_argument)
