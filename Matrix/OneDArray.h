@@ -1,3 +1,4 @@
+#pragma warning( disable : 4290 )  
 #ifndef _ONEDDARRAY_H_
 #define _ONEDDARRAY_H_
 #include <exception>

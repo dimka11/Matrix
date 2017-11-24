@@ -38,7 +38,7 @@ string get_ij(Matrix &M, size_t i, size_t j)
 {
 	return M._get_ij(M.body, i, j);
 }
-void  set_ij(Matrix &M, size_t i, size_t j, std::string value)
+void  set_ij(Matrix &M, size_t i, size_t j, string value)
 {
 	M._set_ij(M.body, i, j, value);
 }

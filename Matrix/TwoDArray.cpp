@@ -18,7 +18,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 	try
 	{
 		res->body = new string*[s];
-		int i = 0;
+		size_t i = 0;
 		try
 		{
 			for (i = 0; i < s; ++i)
@@ -30,7 +30,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 		}
 		catch (std::bad_alloc const &ex)
 		{
-			for (int j = 0; j < i; ++j)
+			for (size_t j = 0; j < i; ++j)
 			{
 				delete[] res->body[j];
 				delete[] res->body;
@@ -47,7 +47,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 void deleteTwoDMatrix(void *Matrix) throw()
 {
 	TwoDMatrix *_M = static_cast<TwoDMatrix*>(Matrix);
-	for (int i = 0; i < _M->size; i++)
+	for (size_t i = 0; i < _M->size; i++)
 	{
 		delete[] _M->body[i];
 	}
