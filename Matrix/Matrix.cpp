@@ -35,11 +35,11 @@ Matrix *CreateGeneralTwoDMatrix(size_t s)
 
 	return GeneralMatrix;
 }
-string get_ij(Matrix &M, size_t i, size_t j)
+string get_ij(Matrix const&M, size_t i, size_t j)
 {
 	return M._get_ij(M.body, i, j);
 }
-void  set_ij(Matrix &M, size_t i, size_t j, string value)
+void  set_ij(Matrix &M, size_t i, size_t j, string value) //todo change reference to pointer
 {
 	M._set_ij(M.body, i, j, value);
 }

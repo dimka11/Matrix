@@ -30,36 +30,60 @@ namespace MatrixUnitTestGeneral
 		}
 		TEST_METHOD(GeneralMatrixOneDInvalidGetFunctionArguments)
 		{
-			
+			Matrix *M = CreateGeneralOneDMatrix(12);
+			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 0); });
+			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 0, 10); });
+			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 10); });
+			deleteMatrix(M);
 		}
 		TEST_METHOD(GeneralMatrixTwoDInvalidGetFunctionArguments)
 		{
-			
+			Matrix *M = CreateGeneralTwoDMatrix(12);
+			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 0); });
+			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 0, 10); });
+			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 10); });
+			deleteMatrix(M);
 		}
 		TEST_METHOD(GeneralMatrixOneDInvalidSetFunctionArguments)
 		{
+			Matrix *M = CreateGeneralOneDMatrix(12);
+			Assert::ExpectException <std::invalid_argument>([M]() {set_ij(*M, 16, 0, "Hello"); });
+			Assert::ExpectException <std::invalid_argument>([M]() {set_ij(*M, 0, 16, "Hello"); });
+			Assert::ExpectException <std::invalid_argument>([M]() {set_ij(*M, 16, 16, "Hello"); });
 
+			deleteMatrix(M);
 		}
 		TEST_METHOD(GeneralMatrixTwoDInvalidSetFunctionArguments)
 		{
-
+			Matrix *M = CreateGeneralTwoDMatrix(12);
+			Assert::ExpectException <std::invalid_argument>([M]() {set_ij(*M, 16, 0, "Hello"); });
+			Assert::ExpectException <std::invalid_argument>([M]() {set_ij(*M, 0, 16, "Hello"); });
+			Assert::ExpectException <std::invalid_argument>([M]() {set_ij(*M, 16, 16, "Hello"); });
+			deleteMatrix(M);
 		}
 		TEST_METHOD(GeneralMatrixOneDSetAndGetFunctionWorkingCorrectly)
 		{
-
+			Matrix *M = CreateGeneralOneDMatrix(10);
+			set_ij(*M, 1, 1, "Hello");
+			Assert::AreEqual<std::string>("Hello", get_ij(*M, 1, 1));
+			deleteMatrix(M);
 		}
 		TEST_METHOD(GeneralMatrixTwoDSetAndGetFunctionWorkingCorrectly)
 		{
-
+			Matrix *M = CreateGeneralTwoDMatrix(10);
+			set_ij(*M, 1, 1, "Hello");
+			Assert::AreEqual<std::string>("Hello", get_ij(*M, 1, 1));
+			deleteMatrix(M);
 		}
-		TEST_METHOD(GeneralMatrixOneD)
+		TEST_METHOD(GeneralMatrixOneDSizeFunctionWorkingCorrectly)
 		{
-
+			Matrix *M = CreateGeneralOneDMatrix(10);
+			Assert::AreEqual<const int>(8, sizeMatrix(*M));
 		}
-		TEST_METHOD(GeneralMatrixTwoD)
+		TEST_METHOD(GeneralMatrixTwoDSizeFunctionWorkingCorrectly)
 		{
-
+			Matrix *M = CreateGeneralTwoDMatrix(10);
+			Assert::AreEqual<const int>(8, sizeMatrix(*M));
 		}
 	};
-	
 }
