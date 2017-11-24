@@ -4,7 +4,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace MatrixUnitTest
+namespace MatrixUnitTest1D
 {		
 	TEST_CLASS(UnitTestOneDMatrix)
 	{
@@ -15,11 +15,11 @@ namespace MatrixUnitTest
 			OneDMatrix *m = CreateOneDMatrix(10);
 			deleteOneDMatrix(m);
 		}	// мы можем тестировать отдельно удаление и создание матрицы?
-		TEST_METHOD(ThrowExceptionIfMatrixSizeArgumentIsZero)
+		TEST_METHOD(OneDMatrixThrowExceptionIfMatrixSizeArgumentIsZero)
 		{
 			Assert::ExpectException<std::invalid_argument>([]() {CreateOneDMatrix(0); });
 		}
-		TEST_METHOD(InvalidGetFunctionArguments)
+		TEST_METHOD(OneDMatrixInvalidGetFunctionArguments)
 		{
 			OneDMatrix* Matrix = CreateOneDMatrix(8);
 			Assert::ExpectException<std::invalid_argument>([Matrix]() {get_ijOneDMatrix(Matrix, 10, 0); });
@@ -27,7 +27,7 @@ namespace MatrixUnitTest
 			Assert::ExpectException<std::invalid_argument>([Matrix]() {get_ijOneDMatrix(Matrix, 10, 10); });
 			deleteOneDMatrix(Matrix);
 		}
-		TEST_METHOD(InvalidSetFunctionArguments)
+		TEST_METHOD(OneDMatrixInvalidSetFunctionArguments)
 		{
 			OneDMatrix* Matrix = CreateOneDMatrix(8);
 			Assert::ExpectException<std::invalid_argument>([Matrix]() {set_ijOneDMatrix(Matrix, 10, 0, "Hello"); });
@@ -35,17 +35,17 @@ namespace MatrixUnitTest
 			Assert::ExpectException<std::invalid_argument>([Matrix]() {set_ijOneDMatrix(Matrix, 10, 10, "Hello"); });
 			deleteOneDMatrix(Matrix);
 		}
-		TEST_METHOD(SetAndGetFunctionWorkingCorrectly)
+		TEST_METHOD(OneDMatrixSetAndGetFunctionWorkingCorrectly)
 		{
 			OneDMatrix* Matrix = CreateOneDMatrix(3);
 			set_ijOneDMatrix(Matrix, 1, 1, "Hello");
-			Assert::AreEqual<std::string>(get_ijOneDMatrix(Matrix, 1, 1), "Hello");
+			Assert::AreEqual<std::string>("Hello", get_ijOneDMatrix(Matrix, 1, 1));
 			deleteOneDMatrix(Matrix);
 		}
-		TEST_METHOD(GetSizeFunctionWorkingCorrectly)
+		TEST_METHOD(OneDMatrixGetSizeFunctionWorkingCorrectly)
 		{
 			OneDMatrix* Matrix = CreateOneDMatrix(8);
-			Assert::AreEqual<int>(sizeOneDMatrix(Matrix), 8);
+			Assert::AreEqual<int>(8, sizeOneDMatrix(Matrix));
 			deleteOneDMatrix(Matrix);
 		}
 	};

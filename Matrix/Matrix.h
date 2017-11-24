@@ -1,16 +1,14 @@
 #ifndef _MATRIX_H_
 #define _MATRIX_H_
+#include "OneDArray.h"
+#include "TwoDArray.h"
+struct Matrix;
+// pointers to functions:
 
-//todo Заменить double на string в return type
-//todo заменить double на string в параметре сеттера
-struct Matrix; // Объявление матрицы
-
-// Указатели на функции:
-
-typedef double(*p_Of_get_ij)(void*, size_t, size_t); // getter
-typedef void(*p_Of_set_ij)(void*, size_t, size_t, double); // setter
-typedef void(*p_Of_delete)(void*) throw(); // удаление матрицы
-typedef size_t(*p_Of_size)(void*) throw(); // размер
+typedef std::string(*p_Of_get_ij)(void*, size_t, size_t)throw(std::invalid_argument);; // getter
+typedef void(*p_Of_set_ij)(void*, size_t, size_t, std::string)throw(std::invalid_argument);; // setter
+typedef void(*p_Of_delete)(void*) throw(); // delete
+typedef size_t(*p_Of_size)(void*) throw(); // size of matrix
 
 
 Matrix* createMatrix(void *body, p_Of_get_ij _get_ij, p_Of_set_ij _set_ij, p_Of_delete _delete, p_Of_size _size); // Создание новой матрицы

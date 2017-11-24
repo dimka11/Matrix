@@ -1,5 +1,6 @@
+#pragma warning( disable : 4290 )  
 #include "Matrix.h"
-#include "OneDArray.h" // Одномерная
+#include "OneDArray.h"
 
 // Структура указателей на функции и тело матрицы
 struct Matrix{
