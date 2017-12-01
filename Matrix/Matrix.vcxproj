@@ -117,12 +117,9 @@
     <ClInclude Include="Matrix.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Examples.cpp" />
     <ClCompile Include="Iterator.cpp" />
     <ClCompile Include="OneDArray.cpp" />
     <ClCompile Include="TwoDArray.cpp" />
-    <ClCompile Include="Iterator(1).cpp" />
-    <ClCompile Include="z_exampleIterator.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="StringComp.cpp" />
   </ItemGroup>

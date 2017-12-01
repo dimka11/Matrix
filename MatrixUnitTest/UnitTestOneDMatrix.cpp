@@ -14,7 +14,7 @@ namespace MatrixUnitTest1D
 		{	
 			OneDMatrix *m = CreateOneDMatrix(10);
 			deleteOneDMatrix(m);
-		}	// мы можем тестировать отдельно удаление и создание матрицы?
+		}
 		TEST_METHOD(OneDMatrixThrowExceptionIfMatrixSizeArgumentIsZero)
 		{
 			Assert::ExpectException<std::invalid_argument>([]() {CreateOneDMatrix(0); });
@@ -24,7 +24,9 @@ namespace MatrixUnitTest1D
 			OneDMatrix* Matrix = CreateOneDMatrix(8);
 			Assert::ExpectException<std::invalid_argument>([Matrix]() {get_ijOneDMatrix(Matrix, 10, 0); });
 			Assert::ExpectException<std::invalid_argument>([Matrix]() {get_ijOneDMatrix(Matrix, 0, 10); });
-			Assert::ExpectException<std::invalid_argument>([Matrix]() {get_ijOneDMatrix(Matrix, 10, 10); });
+			Assert::ExpectException<std::invalid_argument>([Matrix]() {
+				get_ijOneDMatrix(Matrix, 10, 10); 
+			});
 			deleteOneDMatrix(Matrix);
 		}
 		TEST_METHOD(OneDMatrixInvalidSetFunctionArguments)

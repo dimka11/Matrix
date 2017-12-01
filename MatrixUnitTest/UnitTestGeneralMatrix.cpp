@@ -30,8 +30,9 @@ namespace MatrixUnitTestGeneral
 		}
 		TEST_METHOD(GeneralMatrixOneDInvalidGetFunctionArguments)
 		{
-			Matrix *M = CreateGeneralOneDMatrix(12);
-			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 0); });
+			Matrix *M = CreateGeneralOneDMatrix(8);
+			Assert::ExpectException <std::invalid_argument>([M]() 
+			{get_ij(*M, 10, 0); });
 			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 0, 10); });
 			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 10); });
 			deleteMatrix(M);
@@ -77,7 +78,7 @@ namespace MatrixUnitTestGeneral
 		}
 		TEST_METHOD(GeneralMatrixOneDSizeFunctionWorkingCorrectly)
 		{
-			Matrix *M = CreateGeneralOneDMatrix(10);
+			Matrix *M = CreateGeneralOneDMatrix(8);
 			Assert::AreEqual<const int>(8, sizeMatrix(*M));
 		}
 		TEST_METHOD(GeneralMatrixTwoDSizeFunctionWorkingCorrectly)

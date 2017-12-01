@@ -28,7 +28,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 			res->size = s;
 			return res;
 		}
-		catch (std::bad_alloc const &ex)
+		catch (std::bad_alloc const&ex)
 		{
 			for (size_t j = 0; j < i; ++j)
 			{
@@ -38,7 +38,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 			}
 		}
 	}
-	catch (std::bad_alloc const &ex)
+	catch (std::bad_alloc const&ex)
 	{
 		delete res;
 		throw ex;

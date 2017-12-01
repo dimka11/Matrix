@@ -10,16 +10,16 @@ struct OneDMatrix
 	size_t size; //size
 };
 
-OneDMatrix* CreateOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_argument)
+OneDMatrix *CreateOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_argument)
 {
 	if (0 == size) // check size
 	{
 		throw std::invalid_argument("Matrix size should be greather than 0.");
 	}
-	OneDMatrix *res = new OneDMatrix; // alloc memory
+	OneDMatrix *res = new OneDMatrix(); // alloc memory
 	try
 	{
-		res->body = new string[size]; 
+		res->body = new string[size * size]; 
 		res->size = size;
 		return res;
 	}
@@ -33,19 +33,19 @@ OneDMatrix* CreateOneDMatrix(size_t size) throw(std::bad_alloc, std::invalid_arg
 string get_ijOneDMatrix(void* Matrix, size_t i, size_t j)throw(std::invalid_argument)
 {
 	OneDMatrix *_Matrix = static_cast<OneDMatrix*>(Matrix);
-	if (i < _Matrix->size || j > _Matrix->size) // check that arg it not out of bound 
+	if (i > _Matrix->size || j > _Matrix->size) // check that arg it not out of bound 
 	{
 		throw std::invalid_argument("i or j are grether than matrix size");
 	}
 	return _Matrix->body[i*_Matrix->size + j];
 }
 
-void set_ijOneDMatrix(void* Matrix, size_t i, size_t j, string value)throw(std::invalid_argument)
+void set_ijOneDMatrix(void *Matrix, size_t i, size_t j, string value) throw(std::invalid_argument)
 {
-	OneDMatrix*_Matrix = static_cast<OneDMatrix*>(Matrix);
-	if(i > _Matrix->size || j > _Matrix->size)
+	OneDMatrix* _Matrix = static_cast<OneDMatrix*>(Matrix);
+	if (i > _Matrix->size || j > _Matrix->size)
 	{
-		throw std::invalid_argument("i or j are greather than matrix size");
+		throw std::invalid_argument("i and j must be in range of matrix");
 	}
 	_Matrix->body[i*_Matrix->size + j] = value;
 }

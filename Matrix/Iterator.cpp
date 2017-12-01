@@ -8,7 +8,6 @@ struct It
 	size_t col;
 };
 
-
 It *begin(Matrix *Matrix)
 {
 	It* it = new It();
@@ -17,8 +16,12 @@ It *begin(Matrix *Matrix)
 	it->col = sizeMatrix(*Matrix) - 1;
 	return it;
 }
-size_t current(It *it)
+std::string current(It *it)
 {
-	next;
-
+	return get_ij(*it->Matrix, it->row, it->col ); 
+}
+bool next(It *it, int i, int j){
+	it->row = j;
+	it->col = j;
+	return it;
 }
