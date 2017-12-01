@@ -27,10 +27,10 @@ Matrix* CreateGeneralOneDMatrix(size_t s)
 Matrix *CreateGeneralTwoDMatrix(size_t s)
 {
 	Matrix *GeneralMatrix = new Matrix();
-	GeneralMatrix->body = CreateGeneralTwoDMatrix(s);
+	GeneralMatrix->body = CreateTwoDMatrix(s);
 	GeneralMatrix->_get_ij = get_ijTwoDMatrix;
-	GeneralMatrix->_set_ij = set_ijOneDMatrix;
-	GeneralMatrix->_delete = deleteOneDMatrix;
+	GeneralMatrix->_set_ij = set_ijTwoDMatrix;
+	GeneralMatrix->_delete = deleteTwoDMatrix;
 	GeneralMatrix->_size = sizeTwoDMatrix;
 
 	return GeneralMatrix;

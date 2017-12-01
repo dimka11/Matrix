@@ -17,7 +17,7 @@ namespace MatrixUnitTestGeneral
 		}
 		TEST_METHOD(GeneralMatrixTwoDCreatedAndDeleted)
 		{
-			Matrix *M = CreateGeneralTwoDMatrix(10);
+			Matrix *M = CreateGeneralTwoDMatrix(3);
 			deleteMatrix(M);
 		}
 		TEST_METHOD(GeneralMatrixOneDThrowExceptionIfMatrixSizeArgumentIsZero)
@@ -39,7 +39,7 @@ namespace MatrixUnitTestGeneral
 		}
 		TEST_METHOD(GeneralMatrixTwoDInvalidGetFunctionArguments)
 		{
-			Matrix *M = CreateGeneralTwoDMatrix(12);
+			Matrix *M = CreateGeneralTwoDMatrix(8);
 			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 0); });
 			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 0, 10); });
 			Assert::ExpectException <std::invalid_argument>([M]() {get_ij(*M, 10, 10); });
@@ -83,7 +83,7 @@ namespace MatrixUnitTestGeneral
 		}
 		TEST_METHOD(GeneralMatrixTwoDSizeFunctionWorkingCorrectly)
 		{
-			Matrix *M = CreateGeneralTwoDMatrix(10);
+			Matrix *M = CreateGeneralTwoDMatrix(8);
 			Assert::AreEqual<const int>(8, sizeMatrix(*M));
 		}
 	};
