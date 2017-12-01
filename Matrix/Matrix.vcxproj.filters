@@ -27,15 +27,12 @@
     <ClInclude Include="Iterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StringComp.h">
+    <ClInclude Include="FindString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StringComp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TwoDArray.cpp">
@@ -45,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Iterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FindString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

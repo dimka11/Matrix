@@ -17,9 +17,10 @@ It *begin(Matrix *matrix)
 	return it;
 }
 
-It* end(It *it)
+bool end(It *it, int i, int j)
 {
-	//todo end method
+	it->row = sizeMatrix(it->matrix);
+	it->matrix = sizeMatrix(it->matrix)
 	return it;
 }
 
