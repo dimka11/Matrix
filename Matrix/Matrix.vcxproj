@@ -113,6 +113,7 @@
   <ItemGroup>
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="OneDArray.h" />
+    <ClInclude Include="StringComp.h" />
     <ClInclude Include="TwoDArray.h" />
     <ClInclude Include="Matrix.h" />
   </ItemGroup>

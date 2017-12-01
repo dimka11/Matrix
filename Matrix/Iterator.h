@@ -4,9 +4,10 @@
 #include "Matrix.h"
 
 struct It;
-It *begin(Matrix *Matrix);
+It *begin(Matrix *matrix);
+It *end(Matrix *matrix);
 bool next(It &i);
-size_t current(It &i);
+size_t current(It &it);
 
 
 

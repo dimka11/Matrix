@@ -3,22 +3,29 @@
 
 struct It
 {
-	Matrix *Matrix;
+	Matrix *matrix;
 	size_t row;
 	size_t col;
 };
 
-It *begin(Matrix *Matrix)
+It *begin(Matrix *matrix)
 {
 	It* it = new It();
-	it->Matrix = Matrix;
+	it->matrix = matrix;
 	it->row = 0;
-	it->col = sizeMatrix(*Matrix) - 1;
+	it->col = sizeMatrix(*matrix) - 1;
 	return it;
 }
+
+It* end(It *it)
+{
+	//todo end method
+	return it;
+}
+
 std::string current(It *it)
 {
-	return get_ij(*it->Matrix, it->row, it->col ); 
+	return get_ij(*it->matrix, it->row, it->col ); 
 }
 bool next(It *it, int i, int j){
 	it->row = j;
