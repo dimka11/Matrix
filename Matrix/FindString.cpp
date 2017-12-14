@@ -3,20 +3,24 @@ using namespace std;
 
 void CreateMatrixAndSetValues()
 {
-	Matrix *matrix = CreateGeneralOneDMatrix(3);
-	set_ij(*matrix, 0, 0, "Hello");
+	//Matrix *matrix = CreateGeneralOneDMatrix(3);
+	//set_ij(*matrix, 0, 0, "Hello");
 }
 
 string TestCase = "Hello";
 vector<int> Result;
 
-void FindString(std::vector<int> &Result, It &it, string StringForFind)
-{
-
-	//todo вызов итератора	
+void FindString(std::vector<int> &Result ,Matrix *matrix, string StringForFind)
+{	
+	//for (It it = begin(matrix); end(it); next(it, ))
+	{
+	//	(it).find("Hello");
+	}
 }
 
 void MyF()
 {
-	FindString(Result, "Hello", it);
+	CreateMatrixAndSetValues();
+	//FindString(Result, matrix , "Hello");
+	
 }

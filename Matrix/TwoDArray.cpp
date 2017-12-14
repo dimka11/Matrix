@@ -13,6 +13,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 	if (0 == s)
 	{
 		throw std::invalid_argument("Invalid Matrix size argument");
+		return 0;
 	}
 	TwoDMatrix *res = new TwoDMatrix();
 	try

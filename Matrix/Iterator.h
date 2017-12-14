@@ -5,13 +5,13 @@
 
 struct It;
 It *begin(Matrix *matrix);
-bool next(It &i);
-bool end(It *it, int i, int j);
-size_t current(It &it);
-bool end(It *it, int i, int j);
+bool next(It &it);
+std::string current(It &it);
 
 
 
+//bool end(It *it);
+//bool getElement(It &i, int, int);
 #endif
 
 /*
