@@ -37,9 +37,24 @@ namespace IteratorUnitTest
 			}
 			deleteMatrix(matrix);
 	}
-		TEST_METHOD(IteratorTest)
+		TEST_METHOD(IteratorIsCreated)
 		{
 
+		}
+		TEST_METHOD(IteratorCount)
+		{
+
+		}
+		TEST_METHOD(IteratorTest)
+		{
+			Matrix *matrix = CreateGeneralOneDMatrix(2);
+			Assert::AreEqual<size_t>(2, sizeMatrix(*matrix));
+			It *iterator = begin(matrix);
+			Assert::IsTrue(next(*iterator));
+
+
+			delete &iterator;
+			deleteMatrix(matrix);
 		}
 		
 	};
