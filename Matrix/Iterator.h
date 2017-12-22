@@ -12,7 +12,6 @@ std::string current(It &it);
 
 //bool getElement(It &i, int, int);
 #endif
-
 /*
 struct It;
 void begin(It &it);

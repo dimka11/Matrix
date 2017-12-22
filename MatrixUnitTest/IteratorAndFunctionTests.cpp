@@ -14,48 +14,59 @@ namespace IteratorUnitTest
 
 		TEST_METHOD(FindString)
 		{
-			Matrix *matrix = CreateGeneralOneDMatrix(10); // creating a new matrix
-			set_ij(*matrix, 0, 0, "myWordinStringinCell"); // filling in matrix
-			std::vector<int> Numstr; // vector contains rows numbers.
-			It *it = begin(matrix); // init iterator
+			const int MS = 10;
+			Matrix *matrix = CreateGeneralOneDMatrix(MS);
+			set_ij(*matrix, 0, 0, "Hello");
+			std::vector<int> Numstr;
+			It *it = begin(matrix); 
 			int itCounter = 0; 
 			int currentString = 1;
 			while (next(*it)) {
-				itCounter++;
-				if (current(*it).find("myWordinStringinCell"))
+				++itCounter;
+				if ((std::find(Numstr.begin(), Numstr.end(), currentString) != Numstr.end()) == false)
 				{
-					Numstr.push_back(currentString);
-					itCounter = 0;
-					currentString++;
-					// there must be jump to next string
+					if (current(*it).find("Hello"))
+					{
+						Numstr.push_back(currentString);
+						itCounter = 0;
+						++currentString;
+					}
+					if (itCounter > MS)
+					{
+						currentString++;
+						itCounter = 0;
+					}
 				}
-				if (itCounter > sizeMatrix(*it->matrix)) // error: type 'It' is incompleate;
-				{
-					currentString++;
-					itCounter = 0;
-				}
+				//todo проверяем, что текущая строка не находится в векторе
+				//todo FALSE переходим к следующему элементу
+				//todo TRUE проверяем элемент (добавляем в вектор)
+				//todo Проверяем счетчик итератора, ++счетчик строки
 			}
+			delete &it;
 			deleteMatrix(matrix);
-	}
+		}
+
 		TEST_METHOD(IteratorIsCreated)
+		{
+			Matrix *matrix = CreateGeneralOneDMatrix(2);
+			It *iterator = begin(matrix);
+			//todo 
+		}
+		TEST_METHOD(IteratorCount)
 		{
 
 		}
-		TEST_METHOD(IteratorCount)
+		TEST_METHOD(FindString)
 		{
 
 		}
 		TEST_METHOD(IteratorTest)
 		{
 			Matrix *matrix = CreateGeneralOneDMatrix(2);
-			Assert::AreEqual<size_t>(2, sizeMatrix(*matrix));
 			It *iterator = begin(matrix);
 			Assert::IsTrue(next(*iterator));
-
-
 			delete &iterator;
 			deleteMatrix(matrix);
 		}
-		
 	};
 }

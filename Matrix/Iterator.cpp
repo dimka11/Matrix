@@ -17,8 +17,6 @@ It *begin (Matrix *matrix)
 	return it;
 }
 
-
-
 std::string current(It *it)
 {
 	return get_ij(*it->matrix, it->row, it->col ); 
@@ -48,8 +46,6 @@ bool end(It *it)
 	it->col = sizeMatrix(*it->matrix) - 1;
 	return it;
 }
-
-
 /*
 bool getElement(It *it, int i, int j){
 	it->row = i;
