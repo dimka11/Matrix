@@ -12,61 +12,43 @@ namespace IteratorUnitTest
 	{
 	public:
 
-		TEST_METHOD(FindString)
-		{
-			const int MS = 10;
-			Matrix *matrix = CreateGeneralOneDMatrix(MS);
-			set_ij(*matrix, 0, 0, "Hello");
-			std::vector<int> Numstr;
-			It *it = begin(matrix); 
-			int itCounter = 0; 
-			int currentString = 1;
-			while (next(*it)) {
-				++itCounter;
-				if ((std::find(Numstr.begin(), Numstr.end(), currentString) != Numstr.end()) == false)
-				{
-					if (current(*it).find("Hello"))
-					{
-						Numstr.push_back(currentString);
-						itCounter = 0;
-						++currentString;
-					}
-					if (itCounter > MS)
-					{
-						currentString++;
-						itCounter = 0;
-					}
-				}
-				//todo проверяем, что текущая строка не находится в векторе
-				//todo FALSE переходим к следующему элементу
-				//todo TRUE проверяем элемент (добавляем в вектор)
-				//todo Проверяем счетчик итератора, ++счетчик строки
-			}
-			delete &it;
-			deleteMatrix(matrix);
-		}
-
-		TEST_METHOD(IteratorIsCreated)
-		{
-			Matrix *matrix = CreateGeneralOneDMatrix(2);
-			It *iterator = begin(matrix);
-			//todo 
-		}
-		TEST_METHOD(IteratorCount)
-		{
-
-		}
-		TEST_METHOD(FindString)
-		{
-
-		}
 		TEST_METHOD(IteratorTest)
 		{
 			Matrix *matrix = CreateGeneralOneDMatrix(2);
+			set_ij(*matrix, 0, 0, "Hello");
+			set_ij(*matrix, 0, 1, "String");
+			set_ij(*matrix, 1, 0, "String");
+			set_ij(*matrix, 1, 1, "String");
+
 			It *iterator = begin(matrix);
-			Assert::IsTrue(next(*iterator));
+			for (size_t i = 0; i < 2; ++i)
+			{
+				Assert::IsTrue(next(iterator));
+			}
+			for (size_t i = 0; i < 3; ++i)
+			{
+				Assert::IsFalse(next(iterator));
+			}
 			delete &iterator;
 			deleteMatrix(matrix);
+		}
+		TEST_METHOD(IteratorCount)
+		{
+			Matrix *matrix = CreateGeneralOneDMatrix(3);
+			It *iterator = begin(matrix);
+			int itCounter = 0;
+			while(next(iterator))
+			{
+				itCounter++;
+			}
+			Assert::AreEqual(6, itCounter);
+
+			deleteMatrix(matrix);
+		}
+		TEST_METHOD(FindString)
+		{
+
+
 		}
 	};
 }
