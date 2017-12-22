@@ -40,7 +40,7 @@ namespace IteratorUnitTest
 			int itCounterTest = 0;
 			while(next(iterator))
 			{
-				itCounterTest++;
+				++itCounterTest;
 				//std::string TestString = current(iterator);
 			}
 			Assert::AreEqual(3, itCounterTest);
@@ -59,12 +59,18 @@ namespace IteratorUnitTest
 			{
 				std::string TestString = current(iterator);
 				//Assert::AreEqual(itCounterTest + 1, std::stoi(TestString));
-				itCounterTest++;
+				++itCounterTest;
 			}
 		}
 		TEST_METHOD(FindStringTest)
 		{
-		
+			int const MS = 3;
+			Matrix *matrix = CreateGeneralOneDMatrix(MS);
+			set_ij(*matrix, 0, 0, "Hello");
+
+			FindString();
+
+
 		}
 	};
 }

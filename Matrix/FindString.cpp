@@ -1,7 +1,8 @@
 #include "FindString.h"
 using namespace std;
 
-void CreateMatrixAndSetValues(int MS)
+int const MS = 3;
+void MainFunction()
 {
 	Matrix *matrix = CreateGeneralOneDMatrix(MS);
 	set_ij(*matrix, 0, 0, "Hello");

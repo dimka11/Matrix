@@ -6,7 +6,7 @@
 #include <iostream>
 #include  <string>
 #include <vector>
-void CreateMatrixAndSetValues();
+void CreateMatrixAndSetValues(int);
 void FindString();
 
 
