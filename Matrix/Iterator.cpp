@@ -4,8 +4,8 @@
 struct It
 {
 	Matrix *matrix;
-	size_t row;
-	size_t col;
+	int row;
+	int col;
 };
 
 It *begin (Matrix *matrix)
@@ -25,7 +25,7 @@ bool next(It *it){
 	if (it->row >= sizeMatrix(*it->matrix)){
 		return false;
 	}
-	if (it->col = sizeMatrix(*it->matrix)){
+	if (it->col == (sizeMatrix(*it->matrix))){
 		it->row++;
 		it->col = 0;
 	}

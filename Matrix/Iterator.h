@@ -6,7 +6,7 @@
 struct It;
 It *begin(Matrix *matrix);
 bool next(It *it);
-std::string current(It &it);
+std::string current(It *it);
 //bool end(It *it);
 
 

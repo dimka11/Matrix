@@ -25,30 +25,46 @@ namespace IteratorUnitTest
 			{
 				Assert::IsTrue(next(iterator));
 			}
-			for (size_t i = 0; i < 3; ++i)
+			for (size_t i = 0; i < 4; ++i)
 			{
-				Assert::IsFalse(next(iterator));
+				Assert::IsFalse(next(iterator)); //Message: Îøèáêà Assert
 			}
-			delete &iterator;
+			//delete &iterator;	// C0000005
 			deleteMatrix(matrix);
 		}
 		TEST_METHOD(IteratorCount)
 		{
 			Matrix *matrix = CreateGeneralOneDMatrix(3);
+			set_ij(*matrix, 0, 0, "Hello");
 			It *iterator = begin(matrix);
-			int itCounter = 0;
+			int itCounterTest = 0;
 			while(next(iterator))
 			{
-				itCounter++;
+				itCounterTest++;
+				//std::string TestString = current(iterator);
 			}
-			Assert::AreEqual(6, itCounter);
-
+			Assert::AreEqual(3, itCounterTest);
 			deleteMatrix(matrix);
 		}
-		TEST_METHOD(FindString)
+		TEST_METHOD(IteratorEqualValues)
 		{
-
-
+			Matrix *matrix = CreateGeneralOneDMatrix(2);
+			set_ij(*matrix, 0, 0, "1");
+			set_ij(*matrix, 0, 1, "2");
+			set_ij(*matrix, 1, 0, "3");
+			set_ij(*matrix, 1, 1, "4");
+			It *iterator = begin(matrix);
+			int itCounterTest = 0;
+			while (next(iterator))
+			{
+				std::string TestString = current(iterator);
+				//Assert::AreEqual(itCounterTest + 1, std::stoi(TestString));
+				itCounterTest++;
+			}
+		}
+		TEST_METHOD(FindStringTest)
+		{
+		
 		}
 	};
 }

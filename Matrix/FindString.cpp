@@ -17,7 +17,7 @@ void FindString(Matrix *matrix, int MS)
 		++itCounter;
 		if ((std::find(Numstr.begin(), Numstr.end(), currentString) != Numstr.end()) == false)
 		{
-			if (current(*it).find("Hello"))
+			if (current(it).find("Hello"))
 			{
 				Numstr.push_back(currentString);
 				itCounter = 0;
