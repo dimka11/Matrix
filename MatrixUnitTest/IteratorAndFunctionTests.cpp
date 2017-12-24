@@ -29,7 +29,7 @@ namespace IteratorUnitTest
 			{
 				//Assert::IsFalse(next(iterator)); //Message: Ошибка Assert
 			}
-			delete iterator; 
+			delete iterator;
 			deleteMatrix(matrix);
 		}
 		TEST_METHOD(IteratorCount)
