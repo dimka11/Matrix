@@ -15,7 +15,7 @@ void FindString(Matrix *matrix, std::vector<int> &Numstr)
 		++itCounter;
 		if ((std::find(Numstr.begin(), Numstr.end(), currentString) != Numstr.end()) == false)
 		{
-			if ((current(it).find("Hello")) != -1)
+			if ((current(it).find("Hello")) != std::string::npos)
 			{
 				Numstr.push_back(currentString);
 			}
@@ -25,10 +25,6 @@ void FindString(Matrix *matrix, std::vector<int> &Numstr)
 			++currentString;
 			itCounter = 0;
 		}
-		//todo проверяем, что текущая строка не находится в векторе
-		//todo FALSE переходим к следующему элементу
-		//todo TRUE проверяем элемент (добавляем в вектор)
-		//todo Проверяем счетчик итератора, ++счетчик строки
 	}
 	delete it;
 	deleteMatrix(matrix);
