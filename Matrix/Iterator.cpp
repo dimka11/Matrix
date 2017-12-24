@@ -1,6 +1,8 @@
 #include "Matrix.h"
 #include "Iterator.h"
 
+#include <iostream>
+
 struct It
 {
 	Matrix *matrix;
@@ -12,8 +14,8 @@ It *begin (Matrix *matrix)
 {
 	It* it = new It();
 	it->matrix = matrix;
-	it->row = 0;
 	it->col = -1;
+	it->row = 0;
 	return it;
 }
 
@@ -22,16 +24,37 @@ std::string current(It *it)
 	return get_ij(*it->matrix, it->row, it->col ); 
 }
 bool next(It *it){
-	if (it->row >= sizeMatrix(*it->matrix)){
-		return false;
-	}
-	if (it->col == (sizeMatrix(*it->matrix))){
-		it->row++;
+	
+	if (it->col < 0)
+	{
 		it->col = 0;
 	}
-	else{
-		it->col++;
+	else
+	{
+		if (it->col < (sizeMatrix(*it->matrix)-1))
+		{
+			it->col++;
+		}
+		else
+		{
+			it->row++;
+			it->col = 0;
+		}
+		if (it->row >= sizeMatrix(*it->matrix))
+		{
+			return false;
+		}
 	}
+	return true;
+	
+	/*if (it->col < (sizeMatrix(*it->matrix))){
+		it->col++;
+		//it->col = 0;
+	}
+	else{
+		it->row++;
+		it->col = 0;
+	}*/
 }
 
 

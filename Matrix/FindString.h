@@ -7,7 +7,7 @@
 #include  <string>
 #include <vector>
 void CreateMatrixAndSetValues(int);
-void FindString();
+void FindString(Matrix*, int, std::vector<int>&);
 
 
 #endif

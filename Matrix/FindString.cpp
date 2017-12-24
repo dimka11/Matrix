@@ -2,15 +2,15 @@
 using namespace std;
 
 int const MS = 3;
+std::vector<int> Numstr;
 void MainFunction()
 {
 	Matrix *matrix = CreateGeneralOneDMatrix(MS);
 	set_ij(*matrix, 0, 0, "Hello");
 }
 
-void FindString(Matrix *matrix, int MS)
+void FindString(Matrix *matrix, int MS, std::vector<int> &Numstr)
 {	
-	std::vector<int> Numstr;
 	It *it = begin(matrix);
 	int itCounter = 0;
 	int currentString = 1;
@@ -21,12 +21,12 @@ void FindString(Matrix *matrix, int MS)
 			if (current(it).find("Hello"))
 			{
 				Numstr.push_back(currentString);
-				itCounter = 0;
-				++currentString;
+				//itCounter = 0;
+				//++currentString;
 			}
 			if (itCounter > MS)
 			{
-				currentString++;
+				++currentString;
 				itCounter = 0;
 			}
 		}
@@ -35,6 +35,6 @@ void FindString(Matrix *matrix, int MS)
 		//todo TRUE проверяем элемент (добавляем в вектор)
 		//todo Проверяем счетчик итератора, ++счетчик строки
 	}
-	delete &it;
+	delete it;
 	deleteMatrix(matrix);
 }

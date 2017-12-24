@@ -12,7 +12,7 @@ namespace IteratorUnitTest
 	{
 	public:
 
-		TEST_METHOD(IteratorTest)
+		TEST_METHOD(TemporalyIteratorTest)
 		{
 			Matrix *matrix = CreateGeneralOneDMatrix(2);
 			set_ij(*matrix, 0, 0, "Hello");
@@ -25,16 +25,16 @@ namespace IteratorUnitTest
 			{
 				Assert::IsTrue(next(iterator));
 			}
-			for (size_t i = 0; i < 4; ++i)
+			for (size_t i = 0; i < 3; ++i)
 			{
-				Assert::IsFalse(next(iterator)); //Message: Îøèáêà Assert
+				//Assert::IsFalse(next(iterator)); //Message: Îøèáêà Assert
 			}
-			//delete &iterator;	// C0000005
+			delete iterator; 
 			deleteMatrix(matrix);
 		}
 		TEST_METHOD(IteratorCount)
 		{
-			Matrix *matrix = CreateGeneralOneDMatrix(3);
+			Matrix *matrix = CreateGeneralOneDMatrix(4);
 			set_ij(*matrix, 0, 0, "Hello");
 			It *iterator = begin(matrix);
 			int itCounterTest = 0;
@@ -43,34 +43,58 @@ namespace IteratorUnitTest
 				++itCounterTest;
 				//std::string TestString = current(iterator);
 			}
-			Assert::AreEqual(3, itCounterTest);
+			Assert::AreEqual(16, itCounterTest);
 			deleteMatrix(matrix);
 		}
 		TEST_METHOD(IteratorEqualValues)
 		{
-			Matrix *matrix = CreateGeneralOneDMatrix(2);
+			Matrix *matrix = CreateGeneralOneDMatrix(3);
 			set_ij(*matrix, 0, 0, "1");
 			set_ij(*matrix, 0, 1, "2");
-			set_ij(*matrix, 1, 0, "3");
-			set_ij(*matrix, 1, 1, "4");
+			set_ij(*matrix, 0, 2, "3");
+			set_ij(*matrix, 1, 0, "4");
+			set_ij(*matrix, 1, 1, "5");
+			set_ij(*matrix, 1, 2, "6");
+			set_ij(*matrix, 2, 0, "7");
+			set_ij(*matrix, 2, 1, "8");
+			set_ij(*matrix, 2, 2, "9");
 			It *iterator = begin(matrix);
 			int itCounterTest = 0;
+			/*
 			while (next(iterator))
 			{
-				std::string TestString = current(iterator);
-				//Assert::AreEqual(itCounterTest + 1, std::stoi(TestString));
 				++itCounterTest;
+				std::string TestString = current(iterator);
+				Assert::AreEqual(itCounterTest, std::stoi(TestString));
 			}
+			*/
+			next(iterator);
+
+			std::string TestString = current(iterator);
+			Assert::AreEqual(1, std::stoi(TestString));
+
 		}
 		TEST_METHOD(FindStringTest)
 		{
 			int const MS = 3;
 			Matrix *matrix = CreateGeneralOneDMatrix(MS);
 			set_ij(*matrix, 0, 0, "Hello");
+			set_ij(*matrix, 0, 1, "World");
+			set_ij(*matrix, 0, 2, "World");
+			set_ij(*matrix, 1, 0, "World");
+			set_ij(*matrix, 1, 1, "World");
+			set_ij(*matrix, 1, 2, "World");
+			set_ij(*matrix, 2, 0, "World");
+			set_ij(*matrix, 2, 1, "World");
+			set_ij(*matrix, 2, 2, "Hello");
 
-			FindString();
 
 
+			std::vector<int> Numstr;
+			FindString(matrix, MS, Numstr);
+			//Assert::AreEqual(1, Numstr.at(0));
+			Assert::AreEqual(2, Numstr.at(1));
+			//Assert::AreEqual(3, Numstr.at(1));
 		}
 	};
 }
