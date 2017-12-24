@@ -1,4 +1,3 @@
-#pragma warning( disable : 4290 )  
 #ifndef _TWODDARRAY_H_
 #define _TWODDARRAY_H_
 #include <stdexcept>

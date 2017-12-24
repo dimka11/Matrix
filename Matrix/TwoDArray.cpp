@@ -1,4 +1,3 @@
-#pragma warning( disable : 4290 )  
 #include <stdexcept>
 #include "TwoDArray.h"
 #include <string>

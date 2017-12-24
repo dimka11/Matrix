@@ -1,4 +1,3 @@
-#pragma warning( disable : 4290 )  
 #include "OneDArray.h"
 #include <stdexcept>
 #include <string>

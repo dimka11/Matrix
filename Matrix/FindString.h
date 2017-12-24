@@ -4,6 +4,6 @@
 #include "Iterator.h"
 #include <vector>
 
-void FindString(Matrix*, int, std::vector<int>&);
+void FindString(Matrix*, std::vector<int>&);
 
 #endif
