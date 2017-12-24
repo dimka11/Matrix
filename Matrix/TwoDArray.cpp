@@ -13,7 +13,6 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 	if (0 == s)
 	{
 		throw std::invalid_argument("Invalid Matrix size argument");
-		return 0;
 	}
 	TwoDMatrix *res = new TwoDMatrix();
 	try
@@ -44,6 +43,7 @@ TwoDMatrix* CreateTwoDMatrix(size_t s) throw(std::invalid_argument, std::bad_all
 		delete res;
 		throw ex;
 	}
+	return 0;
 }
 void deleteTwoDMatrix(void *Matrix) throw()
 {

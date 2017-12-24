@@ -1,6 +1,5 @@
 #include "Matrix.h"
 #include "Iterator.h"
-
 #include <iostream>
 
 struct It
@@ -63,12 +62,26 @@ bool next(It *it){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/*
+
 bool end(It *it)
 {
 	it->row = sizeMatrix(*it->matrix) - 1;
 	it->col = sizeMatrix(*it->matrix) - 1;
 	return it;
 }
+*/
 /*
 bool getElement(It *it, int i, int j){
 	it->row = i;
@@ -76,17 +89,6 @@ bool getElement(It *it, int i, int j){
 	return it;
 }
 */
-
-
-
-
-
-
-
-
-
-
-
 
 /*
  *

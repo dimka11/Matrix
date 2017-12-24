@@ -59,7 +59,6 @@ namespace IteratorUnitTest
 			set_ij(*matrix, 2, 1, "8");
 			set_ij(*matrix, 2, 2, "9");
 			It *iterator = begin(matrix);
-			int itCounterTest = 0;
 			/*
 			while (next(iterator))
 			{
@@ -87,8 +86,6 @@ namespace IteratorUnitTest
 			set_ij(*matrix, 2, 0, "World");
 			set_ij(*matrix, 2, 1, "World");
 			set_ij(*matrix, 2, 2, "Hello");
-
-
 
 			std::vector<int> Numstr;
 			FindString(matrix, MS, Numstr);

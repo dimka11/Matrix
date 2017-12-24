@@ -1,4 +1,5 @@
 #include "FindString.h"
+#include "Iterator.h"
 using namespace std;
 
 int const MS = 3;
