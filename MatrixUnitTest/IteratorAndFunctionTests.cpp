@@ -67,13 +67,6 @@ namespace IteratorUnitTest
 				std::string TestString = current(iterator);
 				Assert::AreEqual(itCounterTest, std::stoi(TestString));
 			}
-			
-			/*
-			next(iterator);
-
-			std::string TestString = current(iterator);
-			Assert::AreEqual(1, std::stoi(TestString));
-			*/
 		}
 		TEST_METHOD(FindStringTest)
 		{

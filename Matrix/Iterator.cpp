@@ -45,15 +45,6 @@ bool next(It *it){
 		}
 	}
 	return true;
-	
-	/*if (it->col < (sizeMatrix(*it->matrix))){
-		it->col++;
-		//it->col = 0;
-	}
-	else{
-		it->row++;
-		it->col = 0;
-	}*/
 }
 
 

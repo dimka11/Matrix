@@ -28,4 +28,8 @@ void FindString(Matrix *matrix, std::vector<int> &Numstr)
 	}
 	delete it;
 	deleteMatrix(matrix);
+
+
+
+
 }
