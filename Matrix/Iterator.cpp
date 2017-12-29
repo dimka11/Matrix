@@ -5,8 +5,8 @@
 struct It
 {
 	Matrix *matrix;
-	int row;
-	int col;
+	size_t row;
+	size_t col;
 };
 
 It *begin (Matrix *matrix)
@@ -24,7 +24,8 @@ std::string current(It *it)
 }
 bool next(It *it){
 	
-	if (it->col < 0)
+	//if (it->col < 0) after replace int to size_t
+	if (it->col == std::numeric_limits<size_t>::max())
 	{
 		it->col = 0;
 	}
@@ -46,57 +47,15 @@ bool next(It *it){
 	}
 	return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-bool end(It *it)
+void deleteIterator(It* it)
 {
-	it->row = sizeMatrix(*it->matrix) - 1;
-	it->col = sizeMatrix(*it->matrix) - 1;
-	return it;
+	delete it;
 }
-*/
-/*
-bool getElement(It *it, int i, int j){
-	it->row = i;
-	it->col = j;
-	return it;
+bool IsNotDone(It *it)
+{
+	if ((it->row >= sizeMatrix(*it->matrix)) || (it->col >= sizeMatrix(*it->matrix)))
+	{
+		return false;
+	};
+	return true;
 }
-*/
-
-/*
- *
- *
- * void printVector(const std::vector< std::vector<int> > & vec)
-{ 
-
-    std::vector< std::vector<int> >::const_iterator row; 
-    std::vector<int>::const_iterator col; 
-
-    for (row = vec.begin(); row != vec.end(); ++row)
-    { 
-         for (col = row->begin(); col != row->end(); ++col)
-         { 
-            std::cout << *col; 
-         } 
-    } 
-
-} 
- */

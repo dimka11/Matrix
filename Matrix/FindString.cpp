@@ -2,9 +2,6 @@
 #include "Iterator.h"
 using namespace std;
 
-int const MS = 3;
-std::vector<int> Numstr;
-
 void FindString(Matrix *matrix, std::vector<int> &Numstr)
 {	
 	It *it = begin(matrix);
@@ -26,10 +23,6 @@ void FindString(Matrix *matrix, std::vector<int> &Numstr)
 			itCounter = 0;
 		}
 	}
-	delete it;
+	deleteIterator(it);
 	deleteMatrix(matrix);
-
-
-
-
 }

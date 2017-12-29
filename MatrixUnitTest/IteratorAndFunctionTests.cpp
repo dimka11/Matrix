@@ -12,7 +12,7 @@ namespace IteratorUnitTest
 	{
 	public:
 
-		TEST_METHOD(TemporalyIteratorTest)
+		TEST_METHOD(CreateAndNextIterator)
 		{
 			Matrix *matrix = CreateGeneralOneDMatrix(2);
 			set_ij(*matrix, 0, 0, "Hello");
@@ -21,15 +21,15 @@ namespace IteratorUnitTest
 			set_ij(*matrix, 1, 1, "String");
 
 			It *iterator = begin(matrix);
-			for (size_t i = 0; i < 2; ++i)
+			for (size_t i = 0; i < 4; ++i)
 			{
 				Assert::IsTrue(next(iterator));
 			}
-			for (size_t i = 0; i < 3; ++i)
+			for (size_t i = 4; i < 10; ++i)
 			{
-				//Assert::IsFalse(next(iterator)); //Message: Îøèáêà Assert
+				Assert::IsFalse(next(iterator));
 			}
-			delete iterator;
+			deleteIterator(iterator);
 			deleteMatrix(matrix);
 		}
 		TEST_METHOD(IteratorCount)
@@ -41,10 +41,10 @@ namespace IteratorUnitTest
 			while(next(iterator))
 			{
 				++itCounterTest;
-				//std::string TestString = current(iterator);
 			}
 			Assert::AreEqual(16, itCounterTest);
 			deleteMatrix(matrix);
+			deleteIterator(iterator);
 		}
 		TEST_METHOD(IteratorEqualValues)
 		{
@@ -60,13 +60,17 @@ namespace IteratorUnitTest
 			set_ij(*matrix, 2, 2, "9");
 			It *iterator = begin(matrix);
 			int itCounterTest = 0;
-			
+
+			//while (IsNotDone(iterator))
 			while (next(iterator))
 			{
 				++itCounterTest;
 				std::string TestString = current(iterator);
 				Assert::AreEqual(itCounterTest, std::stoi(TestString));
+				//next(iterator);
 			}
+			deleteMatrix(matrix);
+			deleteIterator(iterator);
 		}
 		TEST_METHOD(FindStringTest)
 		{
@@ -87,5 +91,20 @@ namespace IteratorUnitTest
 			Assert::AreEqual(3, Numstr.at(1));
 			Assert::AreEqual<int>(2, Numstr.size());
 		}
+		TEST_METHOD(FindStringInOneCellMatrix)
+		{
+			Matrix *matrix = CreateGeneralOneDMatrix(3);
+			set_ij(*matrix, 0, 0, "World");
+			std::vector<int> Numstr;
+			FindString(matrix, Numstr);
+			Assert::IsTrue((std::find(Numstr.begin(), Numstr.end(), 1) != Numstr.end()) == false);
+			
+			Matrix *matrix1 = CreateGeneralOneDMatrix(3);
+			set_ij(*matrix1, 0, 0, "Hello");
+			std::vector<int> Numstr1;
+			FindString(matrix1, Numstr1);
+			Assert::AreEqual(1, Numstr1.at(0));
+		}
+
 	};
 }
