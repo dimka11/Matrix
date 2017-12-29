@@ -23,11 +23,11 @@ namespace IteratorUnitTest
 			It *iterator = begin(matrix);
 			for (size_t i = 0; i < 4; ++i)
 			{
-				Assert::IsTrue(next(iterator));
+				Assert::IsTrue(next(iterator),L"NextIsReturnFalseWhereIteratorInShouldBeInMatrix");
 			}
 			for (size_t i = 4; i < 10; ++i)
 			{
-				Assert::IsFalse(next(iterator));
+				Assert::IsFalse(next(iterator),L"NextIsReturnTrueWhereMatrixIsEnd");
 			}
 			deleteIterator(iterator);
 			deleteMatrix(matrix);
@@ -42,7 +42,7 @@ namespace IteratorUnitTest
 			{
 				++itCounterTest;
 			}
-			Assert::AreEqual(16, itCounterTest);
+			Assert::AreEqual(16, itCounterTest, L"IteratorsCountIsNotCorrect");
 			deleteMatrix(matrix);
 			deleteIterator(iterator);
 		}
@@ -66,7 +66,7 @@ namespace IteratorUnitTest
 			{
 				++itCounterTest;
 				std::string TestString = current(iterator);
-				Assert::AreEqual(itCounterTest, std::stoi(TestString));
+				Assert::AreEqual(itCounterTest, std::stoi(TestString),L"ValueGottenByIteratorIsNotCorrect");
 				//next(iterator);
 			}
 			deleteMatrix(matrix);
@@ -87,9 +87,9 @@ namespace IteratorUnitTest
 
 			std::vector<int> Numstr;
 			FindString(matrix, Numstr);
-			Assert::AreEqual(1, Numstr.at(0));
-			Assert::AreEqual(3, Numstr.at(1));
-			Assert::AreEqual<int>(2, Numstr.size());
+			Assert::AreEqual(1, Numstr.at(0),L"FirstStringNumberNotInVector");
+			Assert::AreEqual(3, Numstr.at(1),L"ThirdStringNumberNotInVector");
+			Assert::AreEqual<int>(2, Numstr.size(),L"VectorSizeIsNotCorrect");
 		}
 		TEST_METHOD(FindStringInOneCellMatrix)
 		{
@@ -97,14 +97,17 @@ namespace IteratorUnitTest
 			set_ij(*matrix, 0, 0, "World");
 			std::vector<int> Numstr;
 			FindString(matrix, Numstr);
-			Assert::IsTrue((std::find(Numstr.begin(), Numstr.end(), 1) != Numstr.end()) == false);
+			Assert::IsTrue((std::find(Numstr.begin(), Numstr.end(), 1) != Numstr.end()) == false, L"StringNumberNotShouldBeInVectorButItsFound");
 			
 			Matrix *matrix1 = CreateGeneralOneDMatrix(3);
 			set_ij(*matrix1, 0, 0, "Hello");
 			std::vector<int> Numstr1;
 			FindString(matrix1, Numstr1);
-			Assert::AreEqual(1, Numstr1.at(0));
+			if (Numstr1.size() >0)
+			{
+				Assert::AreEqual(1, Numstr1.at(0), L"StringNumberNotEqualComparedStoredInVector");
+			}
+			else Assert::Fail(L"StringNumberShouldBeInVectorButVectorIsEmpty");
 		}
-
 	};
 }
